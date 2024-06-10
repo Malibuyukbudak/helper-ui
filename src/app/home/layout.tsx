@@ -1,4 +1,4 @@
-import { Grid } from "@/atom/grid";
+import { Grid } from "@/components/atom/grid";
 
 export default function CommonLayout({
   children,
