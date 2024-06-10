@@ -7,7 +7,6 @@ export default function CommonLayout({
 }>) {
   return (
     <Grid
-      container
       direction="column"
       alignItems="center"
       sx={{ minHeight: "100vh", p: 2 }}

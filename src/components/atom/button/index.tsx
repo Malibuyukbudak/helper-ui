@@ -5,6 +5,7 @@ export function Button({
   onClick,
   color,
   children,
+  type,
   sx,
 }: ButtonProps) {
   return (
@@ -12,7 +13,8 @@ export function Button({
       variant={variant}
       color={color}
       onClick={onClick}
-      sx={{ borderRadius: "20px", p: 1, ...sx }}
+      type={type}
+      sx={{ borderRadius: "10px", p: 1, ...sx }}
     >
       {children}
     </MuiButton>

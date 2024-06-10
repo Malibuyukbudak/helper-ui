@@ -16,11 +16,13 @@
     "@mui/icons-material": "^5.15.18",
     "@mui/material": "^5.15.18",
     "@mui/material-nextjs": "^5.15.11",
+    "formik": "^2.4.6",
     "mui-one-time-password-input": "^2.0.2",
     "next": "14.2.3",
     "react": "^18",
     "react-countdown-circle-timer": "^3.2.1",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "yup": "^1.4.0"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^1.5.0",

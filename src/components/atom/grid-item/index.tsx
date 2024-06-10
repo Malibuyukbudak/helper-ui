@@ -1,36 +1,43 @@
-import { GridProps, Grid as MuiGrid } from "@mui/material";
-import { GridItem } from "../grid-item";
+import MuiGrid, { GridProps } from "@mui/material/Grid";
 
-export function Grid({
+export function GridItem({
   children,
   columns,
-  container = true,
-  direction,
-  spacing,
+  sx,
   xs,
+  md,
+  lg,
   xl,
   wrap,
+  minWidth,
+  minHeight,
+  maxWidth,
+  maxHeight,
   zeroMinWidth,
   justifyContent = "space-between",
   alignItems = "center",
-  sx,
+  alignSelf,
 }: GridProps) {
   return (
     <MuiGrid
       columns={columns}
-      direction={direction}
-      container={container}
-      spacing={spacing}
+      item
+      sx={sx}
       xs={xs}
+      md={md}
+      lg={lg}
       xl={xl}
       wrap={wrap}
+      minWidth={minWidth}
+      minHeight={minHeight}
+      maxWidth={maxWidth}
+      maxHeight={maxHeight}
       zeroMinWidth={zeroMinWidth}
       justifyContent={justifyContent}
+      alignSelf={alignSelf}
       alignItems={alignItems}
-      sx={sx}
     >
       {children}
     </MuiGrid>
   );
 }
-Grid.Item = GridItem;

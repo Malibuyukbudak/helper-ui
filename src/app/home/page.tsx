@@ -1,8 +1,5 @@
+import { Login } from "@/components/molecule/login";
+
 export default function HomePage() {
- 
-  return (
-    <>
-      Home
-    </>
-  );
+  return <Login></Login>;
 }
