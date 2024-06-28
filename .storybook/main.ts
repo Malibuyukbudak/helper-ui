@@ -1,5 +1,7 @@
 import type { StorybookConfig } from "@storybook/nextjs";
 
+export const title = "HelperUI Design System";
+
 const config: StorybookConfig = {
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
   addons: [
