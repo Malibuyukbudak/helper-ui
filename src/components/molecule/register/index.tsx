@@ -4,7 +4,7 @@ import { Form } from "@/components/atom/form";
 import { Grid } from "@/components/atom/grid";
 import * as yup from "yup";
 
-export function Login() {
+export function Register() {
   const formProps = {
     initialValues: {
       email: "",
@@ -60,7 +60,7 @@ export function Login() {
                   width: "100%",
                 }}
               >
-                Giriş Yap
+                Kayıt Ol
               </Button>
             </Grid.Item>
           </Grid>

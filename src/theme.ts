@@ -11,7 +11,7 @@ const poppins = Poppins({
 
 const palette = {
   primary: {
-    main: "#FF6274",
+    main: "#57A0FF",
   },
   secondary: {
     main: "#5F5F5F",
