@@ -6,7 +6,7 @@ export function TextField({
   id,
   label,
   value,
-  fullWidth,
+  fullWidth = true,
   placeholder,
   name,
   sx,

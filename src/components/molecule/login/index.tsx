@@ -26,25 +26,20 @@ export function Login() {
   };
 
   return (
-    <Grid
-      container
-      justifyContent="center"
-      alignItems="center"
-      sx={{ height: "80vh" }}
-    >
+    <Grid>
       <Grid.Item xs={12} sm={8} md={4}>
         <Form {...formProps}>
           <Grid>
             <Grid.Item xs={12}>
               <Form.TextField
-                sx={{ width: "100%", py: 1 }}
+                sx={{ py: 1 }}
                 name="email"
                 placeholder="Email adresinizi girin"
               ></Form.TextField>
             </Grid.Item>
             <Grid.Item xs={12}>
               <Form.TextField
-                sx={{ width: "100%", py: 1 }}
+                sx={{ py: 1 }}
                 name="password"
                 type="password"
                 placeholder="Şifrenizi girin"
