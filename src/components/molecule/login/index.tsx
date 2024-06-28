@@ -26,8 +26,8 @@ export function Login() {
   };
 
   return (
-    <Grid>
-      <Grid.Item xs={12} sm={8} md={4}>
+    <Grid >
+      <Grid.Item xs={12}>
         <Form {...formProps}>
           <Grid>
             <Grid.Item xs={12}>

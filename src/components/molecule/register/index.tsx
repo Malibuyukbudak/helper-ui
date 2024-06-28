@@ -27,7 +27,7 @@ export function Register() {
 
   return (
     <Grid>
-      <Grid.Item xs={12} sm={8} md={4}>
+      <Grid.Item xs={12}>
         <Form {...formProps}>
           <Grid>
             <Grid.Item xs={12}>
@@ -43,6 +43,15 @@ export function Register() {
                 name="password"
                 type="password"
                 placeholder="Şifrenizi girin"
+              ></Form.TextField>
+            </Grid.Item>
+
+            <Grid.Item xs={12}>
+              <Form.TextField
+                sx={{ py: 1 }}
+                name="password"
+                type="password"
+                placeholder="Şifrenizi tekrardan girin"
               ></Form.TextField>
             </Grid.Item>
             <Grid.Item xs={12}>
