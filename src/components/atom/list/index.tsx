@@ -36,6 +36,10 @@ export function ListItemText({
   );
 }
 
-export function ListItemButton({ children, sx }: ListItemButtonProps) {
-  return <MuiListItemButton sx={sx}>{children}</MuiListItemButton>;
+export function ListItemButton({ onClick, children, sx }: ListItemButtonProps) {
+  return (
+    <MuiListItemButton onClick={onClick} sx={sx}>
+      {children}
+    </MuiListItemButton>
+  );
 }

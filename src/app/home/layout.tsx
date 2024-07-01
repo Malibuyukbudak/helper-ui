@@ -1,9 +1,9 @@
-import PersistentDrawerLeft from "@/components/molecule/menu";
+import Menu from "@/components/organism/menu";
 
 export default function CommonLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return <PersistentDrawerLeft>{children}</PersistentDrawerLeft>;
+  return <Menu>{children}</Menu>;
 }
