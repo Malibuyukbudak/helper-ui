@@ -1,3 +1,8 @@
+import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
+import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import TableChartIcon from "@mui/icons-material/TableChart";
+import FormatAlignJustifyIcon from "@mui/icons-material/FormatAlignJustify";
+
 import { Box } from "@/components/atom/box";
 import { Divider } from "@/components/atom/divider";
 import { IconButton } from "@/components/atom/icon-button";
@@ -5,13 +10,10 @@ import {
   List,
   ListItem,
   ListItemButton,
+  ListItemIcon,
   ListItemText,
 } from "@/components/atom/list";
-import { Drawer, ListItemIcon } from "@mui/material";
-import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import TableChartIcon from "@mui/icons-material/TableChart";
-import FormatAlignJustifyIcon from "@mui/icons-material/FormatAlignJustify";
+import { Drawer } from "@/components/atom/drawer";
 
 export function MenuDrawer({
   open,
@@ -30,8 +32,6 @@ export function MenuDrawer({
           boxSizing: "border-box",
         },
       }}
-      variant="persistent"
-      anchor="left"
       open={open}
     >
       <Box

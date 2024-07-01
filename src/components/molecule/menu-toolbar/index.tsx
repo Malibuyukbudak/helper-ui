@@ -1,6 +1,7 @@
-import { IconButton } from "@/components/atom/icon-button";
 import { Toolbar } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+
+import { IconButton } from "@/components/atom/icon-button";
 
 export function MenuToolbar({ open, handleDrawerOpen, router }: any) {
   return (

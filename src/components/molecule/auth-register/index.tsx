@@ -1,8 +1,10 @@
 "use client";
+
+import * as yup from "yup";
+
 import { Button } from "@/components/atom/button";
 import { Form } from "@/components/atom/form";
 import { Grid } from "@/components/atom/grid";
-import * as yup from "yup";
 
 export function Register() {
   const formProps = {

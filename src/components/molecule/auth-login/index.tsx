@@ -1,8 +1,10 @@
 "use client";
+
+import * as yup from "yup";
+
 import { Button } from "@/components/atom/button";
 import { Form } from "@/components/atom/form";
 import { Grid } from "@/components/atom/grid";
-import * as yup from "yup";
 
 export function Login() {
   const formProps = {
@@ -26,7 +28,7 @@ export function Login() {
   };
 
   return (
-    <Grid >
+    <Grid>
       <Grid.Item xs={12}>
         <Form {...formProps}>
           <Grid>

@@ -1,14 +1,13 @@
 "use client";
 
 import { useTheme } from "@mui/material/styles";
-import CssBaseline from "@mui/material/CssBaseline";
-import MuiAppBar from "@mui/material/AppBar";
 
 import { useState } from "react";
 import { Box } from "@/components/atom/box";
 import { useRouter } from "next/navigation";
 import { MenuToolbar } from "@/components/molecule/menu-toolbar";
 import { MenuDrawer } from "@/components/molecule/menu-drawer";
+import { AppBar } from "@/components/atom/app-bar";
 
 const drawerWidth = 240;
 
@@ -31,9 +30,7 @@ export default function Menu({
 
   return (
     <Box sx={{ display: "flex" }}>
-      <CssBaseline />
-      <MuiAppBar
-        position="fixed"
+      <AppBar
         sx={{
           transition: theme.transitions.create(["margin", "width"], {
             easing: theme.transitions.easing.sharp,
@@ -54,7 +51,7 @@ export default function Menu({
           handleDrawerOpen={handleDrawerOpen}
           router={router}
         />
-      </MuiAppBar>
+      </AppBar>
       <MenuDrawer
         open={open}
         handleDrawerClose={handleDrawerClose}
@@ -63,7 +60,6 @@ export default function Menu({
         theme={theme}
       />
       <Box
-        component="main"
         sx={{
           flexGrow: 1,
           padding: theme.spacing(3),
