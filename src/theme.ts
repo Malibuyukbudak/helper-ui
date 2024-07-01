@@ -9,12 +9,6 @@ const palette = {
   secondary: {
     main: "#5F5F5F",
   },
-  info: {
-    main: "#000000",
-  },
-  inherit: {
-    main: "#FFFFFF",
-  },
 };
 const theme = createTheme({
   palette,
