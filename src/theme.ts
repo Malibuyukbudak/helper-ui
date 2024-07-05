@@ -4,24 +4,15 @@ import { createTheme } from "@mui/material/styles";
 
 const palette = {
   primary: {
-    main: "#57A0FF",
+    main: "#FF6274",
   },
-  secondary: {
-    main: "#5F5F5F",
+  inherit: {
+    main: "#FFFFFF",
   },
 };
 const theme = createTheme({
   palette,
-  components: {
-    MuiButton: {
-      styleOverrides: {
-        root: {
-          color: "white",
-          fontWeight: "bold",
-        },
-      },
-    },
-  },
+  components: {},
 });
 
 export default theme;

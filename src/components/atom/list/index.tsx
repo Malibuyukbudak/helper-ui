@@ -27,10 +27,16 @@ export function ListItemText({
   primary,
   secondary,
   children,
+  color,
   sx,
 }: ListItemTextProps) {
   return (
-    <MuiListItemText primary={primary} secondary={secondary} sx={sx}>
+    <MuiListItemText
+      primary={primary}
+      secondary={secondary}
+      color={color}
+      sx={sx}
+    >
       {children}
     </MuiListItemText>
   );

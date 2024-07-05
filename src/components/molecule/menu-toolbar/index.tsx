@@ -1,9 +1,26 @@
-import { Toolbar } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import { useState } from "react";
 
 import { IconButton } from "@/components/atom/icon-button";
+import { Typography } from "@/components/atom/typography";
+import { Profile } from "../menu-profile";
+import { Box } from "@/components/atom/box";
+import { Toolbar } from "@/components/atom/toolbar";
 
-export function MenuToolbar({ open, handleDrawerOpen, router }: any) {
+export function MenuToolbar({ handleDrawerOpen }: any) {
+  const [profileMenuAnchor, setProfileMenuAnchor] =
+    useState<null | HTMLElement>(null);
+
+  const handleProfileMenuOpen = (
+    event: React.MouseEvent<HTMLButtonElement>
+  ) => {
+    setProfileMenuAnchor(event.currentTarget);
+  };
+
+  const handleProfileMenuClose = () => {
+    setProfileMenuAnchor(null);
+  };
+
   return (
     <Toolbar>
       <IconButton
@@ -11,17 +28,25 @@ export function MenuToolbar({ open, handleDrawerOpen, router }: any) {
         aria-label="open drawer"
         onClick={handleDrawerOpen}
         edge="start"
-        sx={{ mr: 2, ...(open && { display: "none" }) }}
       >
         <MenuIcon />
       </IconButton>
+      <Box sx={{ flexGrow: 1 }} />
+      <IconButton color="inherit" sx={{ fontSize: "18px" }}>
+        <Typography color="white" variant="body1">
+          Blog
+        </Typography>
+      </IconButton>
       <IconButton
         color="inherit"
-        onClick={() => router.push("/home")}
-        sx={{ fontSize: "18px" }}
+        onClick={handleProfileMenuOpen}
+        sx={{ fontSize: "18px", ml: 2 }}
       >
-        Home
+        <Typography color="white" variant="body1">
+          Ayarlar
+        </Typography>
       </IconButton>
+      <Profile profileMenuAnchor={profileMenuAnchor} handleProfileMenuClose={handleProfileMenuClose}/>
     </Toolbar>
   );
 }

@@ -21,7 +21,7 @@ export default function Menu({
   const router = useRouter();
 
   const handleDrawerOpen = () => {
-    setOpen(true);
+    setOpen(!open);
   };
 
   const handleDrawerClose = () => {
@@ -46,11 +46,7 @@ export default function Menu({
           }),
         }}
       >
-        <MenuToolbar
-          open={open}
-          handleDrawerOpen={handleDrawerOpen}
-          router={router}
-        />
+        <MenuToolbar handleDrawerOpen={handleDrawerOpen} />
       </AppBar>
       <MenuDrawer
         open={open}

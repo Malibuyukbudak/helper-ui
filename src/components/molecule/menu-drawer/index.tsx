@@ -1,7 +1,12 @@
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import TableChartIcon from "@mui/icons-material/TableChart";
-import FormatAlignJustifyIcon from "@mui/icons-material/FormatAlignJustify";
+import PhotoCameraIcon from "@mui/icons-material/PhotoCamera";
+import EventIcon from "@mui/icons-material/Event";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import LocalFloristIcon from "@mui/icons-material/LocalFlorist";
+import RestaurantIcon from "@mui/icons-material/Restaurant";
 
 import { Box } from "@/components/atom/box";
 import { Divider } from "@/components/atom/divider";
@@ -30,6 +35,7 @@ export function MenuDrawer({
         "& .MuiDrawer-paper": {
           width: drawerWidth,
           boxSizing: "border-box",
+          background: "#fffefe",
         },
       }}
       open={open}
@@ -45,33 +51,71 @@ export function MenuDrawer({
       >
         <IconButton onClick={handleDrawerClose}>
           {theme.direction === "ltr" ? (
-            <ChevronLeftIcon />
+            <ChevronLeftIcon sx={{ color: "#FF6274" }} />
           ) : (
-            <ChevronRightIcon />
+            <ChevronRightIcon sx={{ color: "#FF6274" }} />
           )}
         </IconButton>
       </Box>
       <Divider />
       <List>
-        <ListItem key="data-table" disablePadding>
-          <ListItemButton onClick={() => router.push("/home/data-table")}>
+        <ListItem key="organization" disablePadding>
+          <ListItemButton onClick={() => router.push("/event/organization")}>
             <ListItemIcon>
-              <TableChartIcon />
+              <TableChartIcon sx={{ color: "#bcbcbc" }} />
             </ListItemIcon>
-            <ListItemText secondary="Data Table" />
+            <ListItemText secondary="Organizasyon" />
           </ListItemButton>
         </ListItem>
-        <Divider />
-        <ListItem key="form" disablePadding>
-          <ListItemButton onClick={() => router.push("/home/form")}>
+        <ListItem key="photo" disablePadding>
+          <ListItemButton onClick={() => router.push("/event/photo")}>
             <ListItemIcon>
-              <FormatAlignJustifyIcon />
+              <PhotoCameraIcon sx={{ color: "#bcbcbc" }} />
             </ListItemIcon>
-            <ListItemText secondary="Form" />
+            <ListItemText secondary="Fotoğraf" />
+          </ListItemButton>
+        </ListItem>
+        <ListItem key="flower" disablePadding>
+          <ListItemButton onClick={() => router.push("/event/flower")}>
+            <ListItemIcon>
+              <LocalFloristIcon sx={{ color: "#bcbcbc" }} />
+            </ListItemIcon>
+            <ListItemText secondary="Çiçek" />
+          </ListItemButton>
+        </ListItem>
+        <ListItem key="catering" disablePadding>
+          <ListItemButton onClick={() => router.push("/event/catering")}>
+            <ListItemIcon>
+              <RestaurantIcon sx={{ color: "#bcbcbc" }} />
+            </ListItemIcon>
+            <ListItemText secondary="Catering" />
+          </ListItemButton>
+        </ListItem>
+        <ListItem key="henna" disablePadding>
+          <ListItemButton onClick={() => router.push("/event/henna")}>
+            <ListItemIcon>
+              <EventIcon sx={{ color: "#bcbcbc" }} />
+            </ListItemIcon>
+            <ListItemText secondary="Kına" />
+          </ListItemButton>
+        </ListItem>
+        <ListItem key="engagement" disablePadding>
+          <ListItemButton onClick={() => router.push("/event/engagement")}>
+            <ListItemIcon>
+              <FavoriteIcon sx={{ color: "#bcbcbc" }} />
+            </ListItemIcon>
+            <ListItemText secondary="Nişan" />
+          </ListItemButton>
+        </ListItem>
+        <ListItem key="wedding" disablePadding>
+          <ListItemButton onClick={() => router.push("/event/wedding")}>
+            <ListItemIcon>
+              <FavoriteBorderIcon sx={{ color: "#bcbcbc" }} />
+            </ListItemIcon>
+            <ListItemText secondary="Düğün" />
           </ListItemButton>
         </ListItem>
       </List>
-      <Divider />
     </Drawer>
   );
 }
