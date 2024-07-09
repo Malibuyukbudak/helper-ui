@@ -5,8 +5,11 @@ import * as yup from "yup";
 import { Button } from "@/components/atom/button";
 import { Form } from "@/components/atom/form";
 import { Grid } from "@/components/atom/grid";
+import { useRouter } from "next/navigation";
 
 export function Login() {
+  const router = useRouter();
+
   const formProps = {
     initialValues: {
       email: "",
@@ -50,6 +53,7 @@ export function Login() {
             <Grid.Item xs={12}>
               <Button
                 type="submit"
+                onClick={() => router.push("/event")}
                 sx={{
                   my: 1,
                   fontWeight: 700,

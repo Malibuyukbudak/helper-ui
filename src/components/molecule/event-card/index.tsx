@@ -8,66 +8,11 @@ import { Grid } from "@/components/atom/grid";
 import { Typography } from "@/components/atom/typography";
 import useQueryParams from "@/hooks/query";
 
-const organizations = [
-  {
-    name: "Organizasyon 1",
-    description: "Bu organizasyonun açıklaması.",
-    price: "$100",
-    imageUrl: "https://via.placeholder.com/150",
-  },
-  {
-    name: "Organizasyon 2",
-    description: "Bu organizasyonun açıklaması.",
-    price: "$200",
-    imageUrl: "https://via.placeholder.com/150",
-  },
-  {
-    name: "Organizasyon 3",
-    description: "Bu organizasyonun açıklaması.",
-    price: "$300",
-    imageUrl: "https://via.placeholder.com/150",
-  },
-  {
-    name: "Organizasyon 4",
-    description: "Bu organizasyonun açıklaması.",
-    price: "$400",
-    imageUrl: "https://via.placeholder.com/150",
-  },
-  {
-    name: "Organizasyon 5",
-    description: "Bu organizasyonun açıklaması.",
-    price: "$500",
-    imageUrl: "https://via.placeholder.com/150",
-  },
-  {
-    name: "Organizasyon 6",
-    description: "Bu organizasyonun açıklaması.",
-    price: "$600",
-    imageUrl: "https://via.placeholder.com/150",
-  },
-  {
-    name: "Organizasyon 7",
-    description: "Bu organizasyonun açıklaması.",
-    price: "$700",
-    imageUrl: "https://via.placeholder.com/150",
-  },
-  {
-    name: "Organizasyon 8",
-    description: "Bu organizasyonun açıklaması.",
-    price: "$800",
-    imageUrl: "https://via.placeholder.com/150",
-  },
-  {
-    name: "Organizasyon 9",
-    description: "Bu organizasyonun açıklaması.",
-    price: "$900",
-    imageUrl: "https://via.placeholder.com/150",
-  },
-];
-
-const ITEMS_PER_PAGE = 8;
-
-export function EventCardView({ searchParams }: any) {
+export function EventCardView({
+  searchParams,
+  data,
+  itemsPerPage = 8,
+}: any) {
   const { setQueryParams } = useQueryParams();
 
   const handleChange = (
@@ -79,21 +24,17 @@ export function EventCardView({ searchParams }: any) {
     });
   };
 
-  if (!searchParams?.page) {
-    setQueryParams({ page: 1 });
-    searchParams.page = 1;
-  }
-
-  const startIndex = (Number(searchParams?.["page"]) - 1) * ITEMS_PER_PAGE;
-  const selectedOrganizations = organizations.slice(
+  const currentPage = searchParams?.page ? Number(searchParams.page) : 1;
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const selectedData = data.slice(
     startIndex,
-    startIndex + ITEMS_PER_PAGE
+    startIndex + itemsPerPage
   );
 
   return (
     <Box sx={{ p: 2 }}>
       <Grid container spacing={2}>
-        {selectedOrganizations.map((org, index) => (
+        {selectedData.map((org, index) => (
           <Grid.Item xs={12} sm={6} md={3} key={index}>
             <Card>
               <CardMedia
@@ -117,8 +58,8 @@ export function EventCardView({ searchParams }: any) {
       </Grid>
       <Box sx={{ display: "flex", justifyContent: "center", mt: 4 }}>
         <Pagination
-          count={Math.ceil(organizations.length / ITEMS_PER_PAGE)}
-          page={Number(searchParams.page)}
+          count={Math.ceil(data.length / itemsPerPage)}
+          page={currentPage}
           onChange={handleChange}
           color="primary"
         />
