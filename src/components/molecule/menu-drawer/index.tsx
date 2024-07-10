@@ -1,5 +1,3 @@
-import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import TableChartIcon from "@mui/icons-material/TableChart";
 import PhotoCameraIcon from "@mui/icons-material/PhotoCamera";
 import EventIcon from "@mui/icons-material/Event";
@@ -10,7 +8,6 @@ import RestaurantIcon from "@mui/icons-material/Restaurant";
 
 import { Box } from "@/components/atom/box";
 import { Divider } from "@/components/atom/divider";
-import { IconButton } from "@/components/atom/icon-button";
 import {
   List,
   ListItem,
@@ -20,13 +17,7 @@ import {
 } from "@/components/atom/list";
 import { Drawer } from "@/components/atom/drawer";
 
-export function MenuDrawer({
-  open,
-  theme,
-  handleDrawerClose,
-  drawerWidth,
-  router,
-}: any) {
+export function MenuDrawer({ theme, drawerWidth, router }: any) {
   return (
     <Drawer
       sx={{
@@ -38,7 +29,7 @@ export function MenuDrawer({
           background: "#fffefe",
         },
       }}
-      open={open}
+      open={true}
     >
       <Box
         sx={{
@@ -48,15 +39,7 @@ export function MenuDrawer({
           ...theme.mixins.toolbar,
           justifyContent: "flex-end",
         }}
-      >
-        <IconButton onClick={handleDrawerClose}>
-          {theme.direction === "ltr" ? (
-            <ChevronLeftIcon sx={{ color: "#FF6274" }} />
-          ) : (
-            <ChevronRightIcon sx={{ color: "#FF6274" }} />
-          )}
-        </IconButton>
-      </Box>
+      ></Box>
       <Divider />
       <List>
         <ListItem key="organization" disablePadding>

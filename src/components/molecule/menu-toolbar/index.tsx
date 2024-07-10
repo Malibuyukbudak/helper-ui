@@ -7,7 +7,7 @@ import { Profile } from "../menu-profile";
 import { Box } from "@/components/atom/box";
 import { Toolbar } from "@/components/atom/toolbar";
 
-export function MenuToolbar({ handleDrawerOpen }: any) {
+export function MenuToolbar() {
   const [profileMenuAnchor, setProfileMenuAnchor] =
     useState<null | HTMLElement>(null);
 
@@ -23,14 +23,6 @@ export function MenuToolbar({ handleDrawerOpen }: any) {
 
   return (
     <Toolbar>
-      <IconButton
-        color="inherit"
-        aria-label="open drawer"
-        onClick={handleDrawerOpen}
-        edge="start"
-      >
-        <MenuIcon />
-      </IconButton>
       <Box sx={{ flexGrow: 1 }} />
       <IconButton color="inherit" sx={{ fontSize: "18px" }}>
         <Typography color="white" variant="body1">
@@ -46,7 +38,10 @@ export function MenuToolbar({ handleDrawerOpen }: any) {
           Ayarlar
         </Typography>
       </IconButton>
-      <Profile profileMenuAnchor={profileMenuAnchor} handleProfileMenuClose={handleProfileMenuClose}/>
+      <Profile
+        profileMenuAnchor={profileMenuAnchor}
+        handleProfileMenuClose={handleProfileMenuClose}
+      />
     </Toolbar>
   );
 }
