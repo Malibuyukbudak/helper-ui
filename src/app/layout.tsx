@@ -8,6 +8,7 @@ import theme from "@/theme";
 export const metadata: Metadata = {
   title: "Helper UI",
   description: "Helper UI",
+  icons: "/icons/logo.png",
 };
 
 export default function RootLayout({

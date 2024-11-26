@@ -1,6 +1,7 @@
 "use client";
 
 import { Grid } from "@/components/atom/grid";
+import { Image } from "@/components/atom/image";
 import { Tab, TabPanel, Tabs } from "@/components/atom/tabs";
 import { Login } from "@/components/molecule/auth/login";
 import { Register } from "@/components/molecule/auth/register";
@@ -19,6 +20,7 @@ export function Auth({ searchParams }: any) {
         justifyContent: "center",
       }}
     >
+      <Image src="/icons/logo.png" alt="Logo" width={163} height={122} />
       <Tabs
         value={Number(searchParams?.["section"])}
         onChange={handleChange}
