@@ -1,4 +1,5 @@
 import Breadcrumbs from "@/components/atom/bread-crumb";
+import { Grid } from "@/components/atom/grid";
 import Menu from "@/components/organism/menu";
 
 export default function CommonLayout({
@@ -7,9 +8,10 @@ export default function CommonLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <Menu>
-      <Breadcrumbs />
-      {children}
-    </Menu>
+      <Menu>
+        <Grid></Grid>
+        <Breadcrumbs />
+        {children}
+      </Menu>
   );
 }

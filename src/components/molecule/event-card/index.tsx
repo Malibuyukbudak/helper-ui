@@ -8,11 +8,7 @@ import { Grid } from "@/components/atom/grid";
 import { Typography } from "@/components/atom/typography";
 import useQueryParams from "@/hooks/query";
 
-export function EventCardView({
-  searchParams,
-  data,
-  itemsPerPage = 8,
-}: any) {
+export function EventCardView({ searchParams, data, itemsPerPage = 12 }: any) {
   const { setQueryParams } = useQueryParams();
 
   const handleChange = (
@@ -26,15 +22,12 @@ export function EventCardView({
 
   const currentPage = searchParams?.page ? Number(searchParams.page) : 1;
   const startIndex = (currentPage - 1) * itemsPerPage;
-  const selectedData = data.slice(
-    startIndex,
-    startIndex + itemsPerPage
-  );
+  const selectedData = data.slice(startIndex, startIndex + itemsPerPage);
 
   return (
     <Box sx={{ p: 2 }}>
       <Grid container spacing={2}>
-        {selectedData.map((org, index) => (
+        {selectedData.map((org: any, index: any) => (
           <Grid.Item xs={12} sm={6} md={3} key={index}>
             <Card>
               <CardMedia
