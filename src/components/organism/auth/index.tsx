@@ -2,8 +2,8 @@
 
 import { Grid } from "@/components/atom/grid";
 import { Tab, TabPanel, Tabs } from "@/components/atom/tabs";
-import { Login } from "@/components/molecule/auth-login";
-import { Register } from "@/components/molecule/auth-register";
+import { Login } from "@/components/molecule/auth/login";
+import { Register } from "@/components/molecule/auth/register";
 import useQueryParams from "@/hooks/query";
 
 export function Auth({ searchParams }: any) {
