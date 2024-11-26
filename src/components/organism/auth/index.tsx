@@ -20,7 +20,7 @@ export function Auth({ searchParams }: any) {
         justifyContent: "center",
       }}
     >
-      <Image src="/icons/logo.png" alt="Logo" width={163} height={122} />
+      <Image src="/icons/logo.png" alt="Logo" width={322} height={322} />
       <Tabs
         value={Number(searchParams?.["section"])}
         onChange={handleChange}
